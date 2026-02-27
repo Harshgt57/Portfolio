@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harsh Gupta — Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-size: 10.5px;
+            line-height: 1.55;
+            color: #1a1a2e;
+            background: #fff;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .resume {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 36px 44px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---- Header ---- */
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+            border-bottom: 2.5px solid #1e3a5f;
+            padding-bottom: 14px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e3a5f;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header .contact-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            font-size: 10px;
+            color: #374151;
+        }
+
+        .header .contact-row a {
+            color: #2563eb;
+        }
+
+        .header .contact-row .sep {
+            color: #d1d5db;
+        }
+
+        /* ---- Section ---- */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1e3a5f;
+            border-bottom: 1.5px solid #e2e8f0;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* ---- Skills ---- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 3px 12px;
+        }
+
+        .skills-grid .label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .skills-grid .value {
+            color: #1a1a2e;
+        }
+
+        /* ---- Experience ---- */
+        .exp-item {
+            margin-bottom: 12px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-header .company {
+            font-weight: 700;
+            font-size: 11px;
+            color: #1e3a5f;
+        }
+
+        .exp-header .location {
+            font-size: 10px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .exp-role-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 1px;
+        }
+
+        .exp-role-row .role {
+            font-weight: 600;
+            font-size: 10.5px;
+        }
+
+        .exp-role-row .dates {
+            font-size: 10px;
+            color: #6b7280;
+        }
+
+        .exp-bullets {
+            margin-top: 4px;
+            padding-left: 16px;
+        }
+
+        .exp-bullets li {
+            margin-bottom: 2.5px;
+            color: #374151;
+        }
+
+        .exp-bullets li strong {
+            color: #1a1a2e;
+        }
+
+        /* ---- Education ---- */
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-header .school {
+            font-weight: 700;
+            font-size: 11px;
+            color: #1e3a5f;
+        }
+
+        .edu-header .location {
+            font-size: 10px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .edu-degree {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1px;
+        }
+
+        .edu-degree .degree {
+            font-weight: 600;
+        }
+
+        .edu-degree .dates {
+            font-size: 10px;
+            color: #6b7280;
+        }
+
+        /* ---- Projects ---- */
+        .proj-item {
+            margin-bottom: 10px;
+        }
+
+        .proj-title {
+            font-weight: 700;
+            font-size: 10.5px;
+            color: #1e3a5f;
+        }
+
+        .proj-title .tech {
+            font-weight: 400;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .proj-bullets {
+            margin-top: 3px;
+            padding-left: 16px;
+        }
+
+        .proj-bullets li {
+            margin-bottom: 2px;
+            color: #374151;
+        }
+
+        /* ---- Certifications ---- */
+        .cert-list {
+            padding-left: 16px;
+        }
+
+        .cert-list li {
+            margin-bottom: 3px;
+            color: #374151;
+        }
+
+        .cert-list li strong {
+            color: #1a1a2e;
+        }
+
+        .cert-code {
+            color: #6b7280;
+            font-size: 9.5px;
+        }
+
+        /* ---- Achievements ---- */
+        .ach-list {
+            padding-left: 16px;
+        }
+
+        .ach-list li {
+            margin-bottom: 3px;
+            color: #374151;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 10px;
+            }
+
+            .resume {
+                padding: 28px 36px;
+            }
+
+            .section {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Harsh Gupta</h1>
+            <div class="contact-row">
+                <span>📞 +91 87006 10534</span>
+                <span class="sep">|</span>
+                <a href="mailto:harshgt57@gmail.com">harshgt57@gmail.com</a>
+                <span class="sep">|</span>
+                <a href="https://linkedin.com/in/harsh-gupta-83b1ba146" target="_blank">LinkedIn</a>
+                <span class="sep">|</span>
+                <a href="https://github.com/Harshgt57" target="_blank">GitHub</a>
+                <span class="sep">|</span>
+                <a href="https://auth.geeksforgeeks.org/user/harshgt57" target="_blank">GeeksforGeeks</a>
+            </div>
+        </div>
+
+        <!-- SKILLS SUMMARY -->
+        <div class="section">
+            <div class="section-title">Skills Summary</div>
+            <div class="skills-grid">
+                <span class="label">Languages</span>
+                <span class="value">Python, C, C++, SQL, TSQL, DAX, PySpark, HTML</span>
+                <span class="label">Cloud & Data</span>
+                <span class="value">Azure Databricks, Azure Synapse Analytics, Azure Data Factory, Azure Data Lake,
+                    Microsoft Fabric, Apache Spark, Delta Lake, Kafka</span>
+                <span class="label">Databases</span>
+                <span class="value">SQL Server, SAP HANA, Hadoop, PostgreSQL, MySQL, Tabular Model</span>
+                <span class="label">BI & Analytics</span>
+                <span class="value">Power BI, Tableau, DAX Measures, Data Modeling, Data Visualization, ETL
+                    Pipelines</span>
+                <span class="label">Tools</span>
+                <span class="value">Git, VS Code, Power Automate, SSMS, Databricks Notebooks, CI/CD, Azure DevOps,
+                    GitHub</span>
+            </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="section">
+            <div class="section-title">Experience</div>
+
+            <!-- Celebal Technologies -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Celebal Technologies</span>
+                    <span class="location">Noida, India</span>
+                </div>
+                <div class="exp-role-row">
+                    <span class="role">Software Engineer (Full-time)</span>
+                    <span class="dates">May 2025 – Present</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Migrating <strong>SAP HANA calculation views to Databricks (DBX) scripts</strong>, ensuring data
+                        parity through thorough validation against HANA source systems.</li>
+                    <li>Designing, developing, and orchestrating <strong>automated Databricks workflows</strong> across
+                        multiple job groups to enable reliable end-to-end data refreshes and faster issue resolution.
+                    </li>
+                    <li>Building <strong>Silver Delta tables</strong> by performing full data loads from HANA and
+                        merging <strong>Kafka-based Delta streams</strong> to support efficient incremental processing.
+                    </li>
+                    <li>Managing <strong>role-based access control (RBAC)</strong> for users on SAP HANA objects and
+                        migrating legacy <strong>Hadoop-based scripts to Databricks Runtime (DBR)</strong>, validating
+                        performance and output consistency post-migration.</li>
+                    <li>Developing and optimizing <strong>transformation logic for Gold-layer tables</strong> across key
+                        business domains such as Sales, Conversion, and Expense, enabling faster and more informed
+                        business decision-making.</li>
+                    <li>Migrated <strong>Tableau reports logic into Databricks</strong> to centralize transformations,
+                        allowing Tableau to directly consume curated datasets, thereby improving <strong>performance,
+                            scalability, and data governance</strong>.</li>
+                </ul>
+            </div>
+
+            <!-- MAQ Software — SE1 -->
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">MAQ Software</span>
+                    <span class="location">Noida, India</span>
+                </div>
+                <div class="exp-role-row">
+                    <span class="role">Software Engineer 1 (Full-time)</span>
+                    <span class="dates">Jul 2023 – May 2025</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Migrated the data flow from an upstream source to a downstream system by eliminating an
+                        intermediate server. Previously, data was pulled at fixed intervals resulting in a three-hour
+                        delay. The new process allows for immediate retrieval, <strong>speeding up execution by three
+                            hours</strong>.</li>
+                    <li>Developed Power BI reports that aided business decisions, leading to <strong>operational cost
+                            reduction and profit maximization up to 65%</strong>.</li>
+                    <li>Optimised Power BI Reports by reducing the <strong>Page Load Time (PLT) by 70–80%</strong>,
+                        leading to a smooth experience for the client.</li>
+                    <li>Designed, validated, and published <strong>10+ Power BI reports</strong> aligned with business
+                        needs and best practices, consolidating all critical information into a single dashboard. This
+                        solution <strong>reduced the client's data analysis effort by 60%</strong>.</li>
+                    <li>Optimized data pipelines, resulting in a <strong>55–75 minute reduction in refresh
+                            time</strong>, which is about <strong>50–60% improvement</strong> from initial refresh time.
+                    </li>
+                    <li>Created a <strong>Report Usage Metric Report</strong> for Total Workspaces showing trends such
+                        as Report Open Trend, Report Views Trend, Report Viewers, etc. The report is widely used by an
+                        American-based food organization and provides insights for <strong>almost 99% of their different
+                            stores</strong>.</li>
+                    <li>Contributed to organizational growth through active roles in <strong>Code Review, QA Review,
+                            UI/UX Review, Process Compliance Review</strong>, and team handling & guiding interns.</li>
+                </ul>
+            </div>
+
+            <!-- MAQ Software — ASE -->
+            <div class="exp-item">
+                <div class="exp-role-row">
+                    <span class="role">Associate Software Engineer</span>
+                    <span class="dates">Jan 2023 – Jul 2023</span>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Created an <strong>ETL pipeline</strong> to perform transformations on data from various
+                        sources, making the transformed data <strong>80–90% more useful</strong> for the clients.</li>
+                    <li>Created various <strong>Azure Databricks Notebooks</strong> for implementing data cleaning, data
+                        transformation, and data processing from various sources.</li>
+                    <li>Implemented a <strong>logging system for ETL operations</strong> using Apache Spark, enhancing
+                        monitoring and troubleshooting capabilities throughout the data processing pipeline.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="edu-header">
+                <span class="school">G.L. Bajaj Institute of Technology and Management</span>
+                <span class="location">Greater Noida, India</span>
+            </div>
+            <div class="edu-degree">
+                <span class="degree">B.Tech in Computer Science Engineering; CGPA: 8.47</span>
+                <span class="dates">Aug 2019 – Jun 2023</span>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <div class="section-title">Personal Projects</div>
+
+            <div class="proj-item">
+                <div class="proj-title">Demographic Data Analyzer <span class="tech">| Python, HERE API, Flask, Machine
+                        Learning</span></div>
+                <ul class="proj-bullets">
+                    <li>Developed a <strong>machine learning project</strong> to help businesses select optimal outlet
+                        locations by analyzing factors like amenities, budget, and proximity.</li>
+                    <li>Improved decision-making efficiency by <strong>20%</strong> using real-world datasets and data
+                        visualization techniques.</li>
+                    <li>Simplified the process of identifying ideal business locations, contributing to a projected
+                        <strong>15% increase in performance and profitability</strong>.</li>
+                    <li>Collaborated with a team of 3 students, impacting over 10 users during testing and validation
+                        phases.</li>
+                </ul>
+            </div>
+
+            <div class="proj-item">
+                <div class="proj-title">LBSA System <span class="tech">| C Programming</span></div>
+                <ul class="proj-bullets">
+                    <li>Developed a <strong>Link Between Student and Administration</strong> project — a platform for
+                        students to provide feedback on services, policies, and campus life.</li>
+                    <li>Integrated messaging system for <strong>real-time communication</strong>, including
+                        announcements, inquiries, and feedback reviewed by administration.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">Certifications</div>
+            <ul class="cert-list">
+                <li><strong>Databricks Certified Data Engineer Professional</strong> — Databricks <span
+                        class="cert-code">(Sep 2025)</span></li>
+                <li><strong>Databricks Certified Data Engineer Associate</strong> — Databricks <span
+                        class="cert-code">(Oct 2025)</span></li>
+                <li><strong>Microsoft Certified: Fabric Data Engineer Associate</strong> — Microsoft <span
+                        class="cert-code">(DP-700, Aug 2025)</span></li>
+                <li><strong>Microsoft Certified: Azure Developer Associate</strong> — Microsoft <span
+                        class="cert-code">(AZ-204, Dec 2024)</span></li>
+                <li><strong>Microsoft Certified: Fabric Analytics Engineer Associate</strong> — Microsoft <span
+                        class="cert-code">(DP-600, May 2024)</span></li>
+            </ul>
+        </div>
+
+        <!-- ACHIEVEMENTS -->
+        <div class="section">
+            <div class="section-title">Achievements</div>
+            <ul class="ach-list">
+                <li>Received <strong>client appreciation</strong> for resolving production issues in minimal time,
+                    leading to a smooth-running ETL process.</li>
+                <li>Received appreciation from reporting senior for <strong>assisting juniors with their tasks</strong>,
+                    leading to a smooth onboarding process into the team.</li>
+                <li><strong>500+ connections</strong> on LinkedIn with consistent engagement in the data engineering
+                    community.</li>
+                <li>Consistent in <strong>solving DSA problems</strong> on GeeksforGeeks (<a
+                        href="https://auth.geeksforgeeks.org/user/harshgt57">harshgt57</a>).</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
