@@ -253,6 +253,7 @@ function initStatCounter() {
 
   function animateCount(el) {
     const target = parseInt(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '+';
     const duration = 1800;
     const startTime = performance.now();
 
@@ -263,7 +264,7 @@ function initStatCounter() {
       const ease = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(ease * target);
 
-      el.textContent = current + (target >= 10 ? '+' : '+');
+      el.textContent = current + suffix;
 
       if (progress < 1) {
         requestAnimationFrame(update);
