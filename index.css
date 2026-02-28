@@ -591,6 +591,23 @@ img {
   color: #fff;
 }
 
+/* Download count badge */
+.download-count {
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0.75;
+  margin-left: 2px;
+  transition: opacity var(--transition-fast);
+}
+
+.download-count:empty {
+  display: none;
+}
+
+.btn-primary:hover .download-count {
+  opacity: 1;
+}
+
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);

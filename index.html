@@ -15,6 +15,9 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Firebase SDK (Realtime Database) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
 </head>
 
 <body>
@@ -58,8 +61,9 @@
             Synapse, Spark & Power BI. 3x Microsoft Certified · 2x Databricks Certified.
           </p>
           <div class="hero-buttons">
-            <a href="Resume.pdf" class="btn btn-primary" download>
+            <a href="Resume.pdf" class="btn btn-primary" id="download-resume-btn" download>
               <i data-lucide="download" style="width:18px;height:18px;"></i> Download Resume
+              <span class="download-count" id="download-count"></span>
             </a>
             <a href="#contact" class="btn btn-secondary">
               <i data-lucide="mail" style="width:18px;height:18px;"></i> Get In Touch

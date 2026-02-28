@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Contact Form (EmailJS) ---------- */
   initContactForm();
+
+  /* ---------- Resume Download Counter (Firebase) ---------- */
+  initResumeCounter();
 });
 
 /* ============================================
@@ -408,5 +411,47 @@ function initThemeToggle() {
     }
 
     localStorage.setItem('portfolio-theme', newTheme);
+  });
+}
+
+/* ============================================
+   RESUME DOWNLOAD COUNTER (Firebase Realtime DB)
+   ============================================ */
+function initResumeCounter() {
+  const downloadBtn = document.getElementById('download-resume-btn');
+  const countEl = document.getElementById('download-count');
+  if (!downloadBtn || !countEl) return;
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCzoG7KGA9xQwtBFrYXMV-gMQ6Ig1XlHk",
+    authDomain: "portfolio-counter-ea3a8.firebaseapp.com",
+    databaseURL: "https://portfolio-counter-ea3a8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "portfolio-counter-ea3a8",
+    storageBucket: "portfolio-counter-ea3a8.firebasestorage.app",
+    messagingSenderId: "721028111003",
+    appId: "1:721028111003:web:a9fe3766daed65e94e843e",
+    measurementId: "G-6NX107R8RK"
+  };
+
+  // Initialize Firebase (only if not already initialized)
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  const db = firebase.database();
+  const countRef = db.ref('resumeDownloads');
+
+  // Listen for real-time count updates
+  countRef.on('value', (snapshot) => {
+    const count = snapshot.val() || 0;
+    countEl.textContent = '(' + count + ')';
+  });
+
+  // Increment count on download click
+  downloadBtn.addEventListener('click', () => {
+    countRef.transaction((currentCount) => {
+      return (currentCount || 0) + 1;
+    });
   });
 }
