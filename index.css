@@ -1648,7 +1648,7 @@ img {
   }
 
   .certs-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .contact-wrapper {
@@ -1705,5 +1705,24 @@ img {
 
   .timeline-header {
     flex-direction: column;
+  }
+
+  .cert-card {
+    padding: 20px 18px;
+    gap: 14px;
+  }
+
+  .cert-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .cert-name {
+    font-size: 0.9rem;
+  }
+
+  .cert-issuer {
+    font-size: 0.78rem;
   }
 }
