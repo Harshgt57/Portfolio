@@ -167,6 +167,27 @@ body * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Skip to Content (Accessibility) */
+.skip-to-content {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 16px;
+  color: #fff;
+}
+
 /* ----- Reset & Base ----- */
 *,
 *::before,
@@ -392,6 +413,9 @@ img {
   cursor: pointer;
   gap: 5px;
   z-index: 1001;
+  background: none;
+  border: none;
+  padding: 4px;
 }
 
 .hamburger span {
@@ -1242,27 +1266,36 @@ img {
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.cert-card {
-  padding: 32px;
+.certs-grid > a {
   display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cert-card {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
 }
 
 .cert-badge {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .cert-badge.microsoft {
@@ -1275,16 +1308,16 @@ img {
 
 .cert-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .cert-issuer {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 /* ============================================

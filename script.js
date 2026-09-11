@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Resume Download Counter (Firebase) ---------- */
   initResumeCounter();
+
+  /* ---------- Dynamic Footer Year ---------- */
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
 /* ============================================
@@ -198,7 +202,9 @@ function initMobileMenu() {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    const isOpen = navLinks.classList.contains('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    hamburger.setAttribute('aria-expanded', isOpen);
   });
 
   // Close menu when a link is clicked
